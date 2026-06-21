@@ -33,8 +33,7 @@ function Navbar() {
         transition: 'all 0.4s ease',
         background: bg,
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        borderBottom: scrolled ? `1px solid ${border}` : 'none',
-      }}>
+borderBottom: `1px solid ${border}`,      }}>
         {/* Logo */}
         <span style={{ fontFamily: 'Fira Code', color: accent, fontSize: '1rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
           &lt;Ja Martinez/&gt;
