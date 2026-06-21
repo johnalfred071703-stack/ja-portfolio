@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import FloatingIcons from './components/FloatingIcons';
+import { ThemeProvider, useTheme } from './ThemeContext';
+import './index.css';
+
+function AppInner() {
+  const { dark } = useTheme();
+  return (
+    <div style={{ position: 'relative', overflowX: 'hidden', background: dark ? '#0d0d0d' : '#f8f8fb', minHeight: '100vh', transition: 'background 0.3s' }}>
+      <FloatingIcons />
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <AppInner />
+    </ThemeProvider>
   );
 }
 
