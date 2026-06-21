@@ -23,7 +23,7 @@ function About() {
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}
           style={{ flex: '1', minWidth: '280px', display: 'flex', justifyContent: 'center' }}>
           <div style={{ width: '280px', height: '280px', borderRadius: '50%', border: `3px solid ${accent}`, overflow: 'hidden', boxShadow: `0 0 40px ${accent}20` }}>
-            <img src="/about.png" alt="Ja Martinez" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+            <img src="/about.png" alt=" Martinez" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
           </div>
         </motion.div>
 
