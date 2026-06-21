@@ -22,25 +22,25 @@ const cardIcons = [
 function Hero() {
   const { dark } = useTheme();
 
-  const bg         = dark ? '#0d0d0d'   : '#f8f8fb';
-  const cardBg     = dark ? 'linear-gradient(160deg, #111 0%, #0b180d 100%)' : 'linear-gradient(160deg, #eef0ff 0%, #e8eaf6 100%)';
-  const cardBorder = dark ? '#1e2e1e'   : '#d0d4f7';
-  const cardFade   = dark ? '#0b180d'   : '#e8eaf6';
-  const pillBg     = dark ? '#0f0f0f'   : '#ffffff';
-  const pillBorder = dark ? '#2a2a2a'   : '#d0d4f7';
-  const accent     = dark ? '#00e676'   : '#4f46e5';
-  const textMain   = dark ? '#f0f0f0'   : '#0f0f1a';
-  const textDim    = dark ? '#555'      : '#6b7280';
-  const statsDim   = dark ? '#444'      : '#9ca3af';
-  const statsBorder= dark ? '#1a1a1a'   : '#e2e2f0';
-  const btnAlt     = dark ? '#111'      : '#ffffff';
-  const btnAltBorder=dark ? '#2a2a2a'  : '#d0d4f7';
-  const iconBg     = dark ? '#111'      : '#ffffff';
-  const iconBorder = dark ? '#1e1e1e'   : '#e2e2f0';
-  const statusBg   = dark ? '#0f0f0f'   : '#ffffff';
-  const statusBorder=dark ? '#222'      : '#e2e2f0';
-  const progressBg = dark ? '#1a1a1a'   : '#f0f0f8';
-  const badgeBorder= dark ? '#00e67628' : '#d0d4f7';
+  const bg          = dark ? '#0d0d0d'   : '#f8f8fb';
+  const cardBg      = dark ? 'linear-gradient(160deg, #111 0%, #0b180d 100%)' : 'linear-gradient(160deg, #eef0ff 0%, #e8eaf6 100%)';
+  const cardBorder  = dark ? '#1e2e1e'   : '#d0d4f7';
+  const cardFade    = dark ? '#0b180d'   : '#e8eaf6';
+  const pillBg      = dark ? '#0f0f0f'   : '#ffffff';
+  const pillBorder  = dark ? '#2a2a2a'   : '#d0d4f7';
+  const accent      = dark ? '#00e676'   : '#4f46e5';
+  const textMain    = dark ? '#f0f0f0'   : '#0f0f1a';
+  const textDim     = dark ? '#555'      : '#6b7280';
+  const statsDim    = dark ? '#444'      : '#9ca3af';
+  const statsBorder = dark ? '#1a1a1a'   : '#e2e2f0';
+  const btnAlt      = dark ? '#111'      : '#ffffff';
+  const btnAltBorder= dark ? '#2a2a2a'   : '#d0d4f7';
+  const iconBg      = dark ? '#111'      : '#ffffff';
+  const iconBorder  = dark ? '#1e1e1e'   : '#e2e2f0';
+  const statusBg    = dark ? '#0f0f0f'   : '#ffffff';
+  const statusBorder= dark ? '#222'      : '#e2e2f0';
+  const progressBg  = dark ? '#1a1a1a'   : '#f0f0f8';
+  const badgeBorder = dark ? '#00e67628' : '#d0d4f7';
 
   return (
     <>
@@ -95,17 +95,48 @@ function Hero() {
           z-index: 0;
           filter: blur(0.3px);
         }
-        @media (max-width: 960px) {
-          .hero-section { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
+
+        /* ── Mobile ── */
+        @media (max-width: 767px) {
+          .hero-wrap {
+            padding: 5rem 1.5rem 3rem;
+          }
+          .hero-section {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 2rem;
+          }
           .hero-right { order: -1; }
-          .hero-card { width: 340px !important; height: 420px !important; }
+          .hero-card {
+            width: 300px !important;
+            height: 360px !important;
+            margin: 0 auto;
+          }
+          .hero-h1 {
+            font-size: 1.6rem !important;
+            word-break: break-word;
+          }
+          .hero-desc { margin: 0 auto 1.5rem; }
           .hero-btns { justify-content: center; }
           .hero-stats { justify-content: center !important; }
+          .bg-icon { display: none; }
+          .status-widget {
+            min-width: 160px !important;
+            padding: 0.5rem 0.75rem !important;
+          }
         }
-        @media (max-width: 500px) {
-          .hero-wrap { padding: 5rem 1.5rem 3rem; }
-          .hero-card { width: 280px !important; height: 350px !important; }
-          .hero-h1 { font-size: 1.9rem !important; }
+
+        @media (min-width: 768px) and (max-width: 960px) {
+          .hero-section {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 2.5rem;
+          }
+          .hero-right { order: -1; }
+          .hero-card { width: 340px !important; height: 420px !important; }
+          .hero-desc { margin: 0 auto 2rem; }
+          .hero-btns { justify-content: center; }
+          .hero-stats { justify-content: center !important; }
         }
       `}</style>
 
@@ -124,16 +155,16 @@ function Hero() {
           {/* LEFT */}
           <motion.div initial={{ opacity: 0, x: -36 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65 }}>
 
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: pillBg, border: `1px solid ${pillBorder}`, borderRadius: '50px', padding: '0.35rem 1rem', marginBottom: '1.4rem', boxShadow: '0 2px 8px #4f46e510' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: pillBg, border: `1px solid ${pillBorder}`, borderRadius: '50px', padding: '0.35rem 1rem', marginBottom: '1.2rem' }}>
               <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: accent, display: 'inline-block', boxShadow: `0 0 8px ${accent}60` }} />
-              <span style={{ color: textDim, fontSize: '0.78rem', fontFamily: 'Fira Code' }}>John Alfred E. Martinez</span>
+              <span style={{ color: textDim, fontSize: '0.75rem', fontFamily: 'Fira Code' }}>John Alfred E. Martinez</span>
             </div>
 
-            <h1 className="hero-h1" style={{ fontSize: 'clamp(2rem, 3vw, 2.9rem)', fontWeight: 800, lineHeight: 1.2, marginBottom: '1.1rem', letterSpacing: '-0.5px', color: textMain }}>
+            <h1 className="hero-h1" style={{ fontSize: 'clamp(1.6rem, 4vw, 2.9rem)', fontWeight: 800, lineHeight: 1.2, marginBottom: '1rem', letterSpacing: '-0.5px', color: textMain }}>
               <TypeAnimation
                 sequence={[
                   "Greetings, I'm John Alfred.", 2000,
-                  'A Fresh Computer Engineer Graduate.', 2000,
+                  'A Fresh Computer Engineer.', 2000,
                   'A Thesis Leader.', 2000,
                   'A Software QA Tester.', 2000,
                   'A Problem Solver.', 2000,
@@ -151,24 +182,24 @@ function Hero() {
 
             <div className="hero-btns">
               <a href="/resume.pdf" download="JohnAlfredMartinez_Resume.pdf" target="_blank" rel="noreferrer"
-                style={{ background: accent, color: dark ? '#0d0d0d' : '#ffffff', padding: '0.75rem 1.7rem', borderRadius: '50px', fontWeight: 700, fontSize: '0.84rem', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.45rem', boxShadow: `0 4px 20px ${accent}40`, whiteSpace: 'nowrap' }}>
-                 Download Resume
+                style={{ background: accent, color: dark ? '#0d0d0d' : '#ffffff', padding: '0.75rem 1.5rem', borderRadius: '50px', fontWeight: 700, fontSize: '0.84rem', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.45rem', boxShadow: `0 4px 20px ${accent}40`, whiteSpace: 'nowrap' }}>
+                📄 Download Resume
               </a>
-              <Link to="projects" smooth={true} duration={1000} offset={-70}
-                style={{ border: `1.5px solid ${btnAltBorder}`, color: accent, padding: '0.75rem 1.7rem', borderRadius: '50px', fontWeight: 600, cursor: 'pointer', fontSize: '0.84rem', background: btnAlt, whiteSpace: 'nowrap' }}>
+              <Link to="projects" smooth duration={1000} offset={-70}
+                style={{ border: `1.5px solid ${btnAltBorder}`, color: accent, padding: '0.75rem 1.5rem', borderRadius: '50px', fontWeight: 600, cursor: 'pointer', fontSize: '0.84rem', background: btnAlt, whiteSpace: 'nowrap' }}>
                 View Work →
               </Link>
             </div>
 
-            <div className="hero-stats" style={{ display: 'flex', gap: '2.4rem', borderTop: `1px solid ${statsBorder}`, paddingTop: '1.6rem' }}>
+            <div className="hero-stats" style={{ display: 'flex', gap: '2rem', borderTop: `1px solid ${statsBorder}`, paddingTop: '1.5rem' }}>
               {[
                 { num: '2',    label: 'Projects Completed' },
                 { num: '600+', label: 'OJT Hours'          },
                 { num: '2',    label: 'Internships'         },
               ].map((s, i) => (
                 <div key={i}>
-                  <p style={{ fontSize: '1.8rem', fontWeight: 800, color: textMain, lineHeight: 1 }}>{s.num}</p>
-                  <p style={{ color: statsDim, fontSize: '0.7rem', marginTop: '0.3rem' }}>{s.label}</p>
+                  <p style={{ fontSize: '1.7rem', fontWeight: 800, color: textMain, lineHeight: 1 }}>{s.num}</p>
+                  <p style={{ color: statsDim, fontSize: '0.68rem', marginTop: '0.3rem' }}>{s.label}</p>
                 </div>
               ))}
             </div>
@@ -180,13 +211,14 @@ function Hero() {
 
               {cardIcons.map(({ Icon, color, top, left, right, bottom }, i) => (
                 <motion.div key={i}
-                  style={{ position: 'absolute', top, left, right, bottom, color, fontSize: '1.1rem', opacity: 0.9, zIndex: 3, background: iconBg, border: `1px solid ${iconBorder}`, borderRadius: '9px', padding: '0.35rem', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 12px #00000015' }}
+                  style={{ position: 'absolute', top, left, right, bottom, color, fontSize: '1.1rem', opacity: 0.9, zIndex: 3, background: iconBg, border: `1px solid ${iconBorder}`, borderRadius: '9px', padding: '0.35rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                   animate={{ y: [0, i % 2 === 0 ? -6 : 6, 0] }}
                   transition={{ duration: 3 + i * 0.4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.3 }}>
                   <Icon />
                 </motion.div>
               ))}
 
+              {/* Available badge */}
               <div style={{ position: 'absolute', top: '14px', left: '50%', transform: 'translateX(-50%)', background: pillBg, border: `1px solid ${badgeBorder}`, borderRadius: '50px', padding: '0.28rem 0.85rem', display: 'flex', alignItems: 'center', gap: '0.45rem', zIndex: 4, whiteSpace: 'nowrap' }}>
                 <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: accent, display: 'inline-block', boxShadow: `0 0 6px ${accent}60` }} />
                 <span style={{ color: accent, fontSize: '0.6rem', fontFamily: 'Fira Code', letterSpacing: '1px' }}>AVAILABLE FOR HIRE</span>
@@ -196,10 +228,12 @@ function Hero() {
 
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: `linear-gradient(to top, ${cardFade} 0%, transparent 100%)`, zIndex: 2, pointerEvents: 'none' }} />
 
+              {/* System Status */}
               <motion.div
+                className="status-widget"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                style={{ position: 'absolute', bottom: '14px', left: '50%', transform: 'translateX(-50%)', background: statusBg, border: `1px solid ${statusBorder}`, borderRadius: '12px', padding: '0.65rem 1rem', minWidth: '185px', zIndex: 5, whiteSpace: 'nowrap', boxShadow: '0 4px 16px #00000012' }}>
+                style={{ position: 'absolute', bottom: '14px', left: '50%', transform: 'translateX(-50%)', background: statusBg, border: `1px solid ${statusBorder}`, borderRadius: '12px', padding: '0.65rem 1rem', minWidth: '185px', zIndex: 5, whiteSpace: 'nowrap' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.45rem' }}>
                   <span style={{ color: accent, fontSize: '0.82rem' }}>⚡</span>
                   <span style={{ color: textMain, fontWeight: 700, fontSize: '0.74rem' }}>System Status</span>
