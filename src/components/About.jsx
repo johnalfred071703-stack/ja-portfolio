@@ -33,7 +33,7 @@ function About() {
             About <span style={{ color: accent }}>Me</span>
           </h2>
           <p style={{ color: textDim, lineHeight: 1.8, marginBottom: '1rem', fontSize: '1rem' }}>
-            Hi there! I'm <span style={{ color: textMain, fontWeight: 600 }}>John Alfred "Ja" Martinez</span>, a fresh Computer Engineering graduate from the Polytechnic University of the Philippines – Sta. Maria Campus.
+            Hi there! I'm <span style={{ color: textMain, fontWeight: 600 }}>John Alfred  Martinez</span>, a fresh Computer Engineering graduate from the Polytechnic University of the Philippines – Sta. Maria Campus.
           </p>
           <p style={{ color: textDim, lineHeight: 1.8, marginBottom: '1rem', fontSize: '1rem' }}>
             I specialize in mobile app development using Flutter & Firebase, IoT system integration with Arduino/ESP32, and software quality assurance. I led the development of ChickTech, an IoT-based poultry monitoring system, as my capstone project.
