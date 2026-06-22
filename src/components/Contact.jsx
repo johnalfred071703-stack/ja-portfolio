@@ -97,13 +97,6 @@ function Contact() {
           </motion.div>
 
         </div>
-
-        {/* Footer */}
-        <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.6, delay: 0.4 }} viewport={{ once: true }}
-          style={{ textAlign: 'center', color: textDim, fontSize: '0.75rem', marginTop: '3rem', fontFamily: 'Fira Code' }}>
-          © {new Date().getFullYear()} John Alfred E. Martinez · Built with React
-        </motion.p>
-
       </div>
     </section>
   );

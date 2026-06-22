@@ -183,7 +183,7 @@ function Hero() {
             <div className="hero-btns">
               <a href="/resume.pdf" download="JohnAlfredMartinez_Resume.pdf" target="_blank" rel="noreferrer"
                 style={{ background: accent, color: dark ? '#0d0d0d' : '#ffffff', padding: '0.75rem 1.5rem', borderRadius: '50px', fontWeight: 700, fontSize: '0.84rem', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.45rem', boxShadow: `0 4px 20px ${accent}40`, whiteSpace: 'nowrap' }}>
-                📄 Download Resume
+                 Download Resume
               </a>
               <Link to="projects" smooth duration={1000} offset={-70}
                 style={{ border: `1.5px solid ${btnAltBorder}`, color: accent, padding: '0.75rem 1.5rem', borderRadius: '50px', fontWeight: 600, cursor: 'pointer', fontSize: '0.84rem', background: btnAlt, whiteSpace: 'nowrap' }}>
