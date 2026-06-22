@@ -30,7 +30,7 @@ function Hero() {
   const pillBorder  = dark ? '#2a2a2a'   : '#d0d4f7';
   const accent      = dark ? '#00e676'   : '#4f46e5';
   const textMain    = dark ? '#f0f0f0'   : '#0f0f1a';
-  const textDim     = dark ? '#555'      : '#6b7280';
+  const textDim = dark ? '#a0a0a0' : '#6b7280';
   const statsDim    = dark ? '#444'      : '#9ca3af';
   const statsBorder = dark ? '#1a1a1a'   : '#e2e2f0';
   const btnAlt      = dark ? '#111'      : '#ffffff';
