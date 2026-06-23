@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,15 +11,29 @@ import './index.css';
 
 function AppInner() {
   const { dark } = useTheme();
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <div style={{ position: 'relative', overflowX: 'hidden', background: dark ? '#0d0d0d' : '#f8f8fb', minHeight: '100vh', transition: 'background 0.3s' }}>
       <FloatingIcons />
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+      <div style={{
+        pointerEvents: modalOpen ? 'none' : 'auto',
+        filter: modalOpen ? 'brightness(0.3)' : 'none',
+        transition: 'filter 0.3s'
+      }}>
+        <Navbar />
+        <Hero />
+        <About />
+      </div>
+      <Projects onModalChange={setModalOpen} />
+      <div style={{
+        pointerEvents: modalOpen ? 'none' : 'auto',
+        filter: modalOpen ? 'brightness(0.3)' : 'none',
+        transition: 'filter 0.3s'
+      }}>
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }
