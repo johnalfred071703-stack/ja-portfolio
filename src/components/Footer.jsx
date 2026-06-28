@@ -1,6 +1,6 @@
-import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { Link } from 'react-scroll';
+import { FaLinkedin } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -16,7 +16,6 @@ function Footer() {
 
       <div style={{ display: 'flex', gap: '1.2rem' }}>
         {[
-          { icon: <FaFacebook size={20} />, href: 'https://www.facebook.com/17.jamartz', color: '#1877f2' },
           { icon: <FaLinkedin size={20} />, href: 'https://www.linkedin.com/in/john-alfred-martinez-b23b66320/', color: '#0a66c2' },
           { icon: <MdEmail size={22} />, href: 'mailto:johnalfred071703@gmail.com', color: '#00e676' },
         ].map((s, i) => (

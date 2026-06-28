@@ -52,7 +52,7 @@ function Contact() {
               </div>
               <div>
                 <p style={{ fontSize: '0.72rem', color: textDim, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0.25rem' }}>Email</p>
-                <p style={{ fontSize: '1rem', fontWeight: 700, color: textMain }}>johnalfred071703@gmail.com</p>
+               <p style={{ fontSize: '1rem', fontWeight: 700, color: textMain, wordBreak: 'break-all' }}>johnalfred071703@gmail.com</p>
               </div>
             </div>
             <FiArrowUpRight size={20} style={{ color: accent, flexShrink: 0 }} />
