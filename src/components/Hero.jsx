@@ -30,7 +30,7 @@ function Hero() {
   const pillBorder  = dark ? '#2a2a2a'   : '#d0d4f7';
   const accent      = dark ? '#00e676'   : '#4f46e5';
   const textMain    = dark ? '#f0f0f0'   : '#0f0f1a';
-  const textDim = dark ? '#a0a0a0' : '#6b7280';
+  const textDim     = dark ? '#a0a0a0'   : '#6b7280';
   const statsDim    = dark ? '#444'      : '#9ca3af';
   const statsBorder = dark ? '#1a1a1a'   : '#e2e2f0';
   const btnAlt      = dark ? '#111'      : '#ffffff';
@@ -39,7 +39,7 @@ function Hero() {
   const iconBorder  = dark ? '#1e1e1e'   : '#e2e2f0';
   const statusBg    = dark ? '#0f0f0f'   : '#ffffff';
   const statusBorder= dark ? '#222'      : '#e2e2f0';
-  const progressBg  = dark ? '#1a1a1a'   : '#f0f0f8';
+  const progressBg  = dark ? '#2e2e2e'   : '#e2e2f0';
   const badgeBorder = dark ? '#00e67628' : '#d0d4f7';
 
   return (
@@ -95,43 +95,19 @@ function Hero() {
           z-index: 0;
           filter: blur(0.3px);
         }
-
-        /* ── Mobile ── */
         @media (max-width: 767px) {
-          .hero-wrap {
-            padding: 5rem 1.5rem 3rem;
-          }
-          .hero-section {
-            grid-template-columns: 1fr;
-            text-align: center;
-            gap: 2rem;
-          }
+          .hero-wrap { padding: 5rem 1.5rem 3rem; }
+          .hero-section { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
           .hero-right { order: -1; }
-          .hero-card {
-            width: 300px !important;
-            height: 360px !important;
-            margin: 0 auto;
-          }
-          .hero-h1 {
-            font-size: 1.6rem !important;
-            word-break: break-word;
-          }
+          .hero-card { width: 300px !important; height: 360px !important; margin: 0 auto; }
+          .hero-h1 { font-size: 1.6rem !important; word-break: break-word; }
           .hero-desc { margin: 0 auto 1.5rem; }
           .hero-btns { justify-content: center; }
           .hero-stats { justify-content: center !important; }
           .bg-icon { display: none; }
-          .status-widget {
-            min-width: 160px !important;
-            padding: 0.5rem 0.75rem !important;
-          }
         }
-
         @media (min-width: 768px) and (max-width: 960px) {
-          .hero-section {
-            grid-template-columns: 1fr;
-            text-align: center;
-            gap: 2.5rem;
-          }
+          .hero-section { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
           .hero-right { order: -1; }
           .hero-card { width: 340px !important; height: 420px !important; }
           .hero-desc { margin: 0 auto 2rem; }
@@ -160,7 +136,7 @@ function Hero() {
               <span style={{ color: textDim, fontSize: '0.75rem', fontFamily: 'Fira Code' }}>John Alfred E. Martinez</span>
             </div>
 
-            <h1 className="hero-h1" style={{ fontSize: 'clamp(1.6rem, 4vw, 2.9rem)', fontWeight: 800, lineHeight: 1.2, marginBottom: '1rem', letterSpacing: '-0.5px', color: textMain }}>
+            <h1 className="hero-h1" style={{ fontSize: 'clamp(1.4rem, 2.8vw, 2.9rem)', fontWeight: 800, lineHeight: 1.2, marginBottom: '1rem', letterSpacing: '-0.5px', color: textMain }}>
               <TypeAnimation
                 sequence={[
                   "Greetings, I'm John Alfred.", 2000,
@@ -183,7 +159,7 @@ function Hero() {
             <div className="hero-btns">
               <a href="/resume.pdf" download="JohnAlfredMartinez_Resume.pdf" target="_blank" rel="noreferrer"
                 style={{ background: accent, color: dark ? '#0d0d0d' : '#ffffff', padding: '0.75rem 1.5rem', borderRadius: '50px', fontWeight: 700, fontSize: '0.84rem', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.45rem', boxShadow: `0 4px 20px ${accent}40`, whiteSpace: 'nowrap' }}>
-                 Download Resume
+                Download Resume
               </a>
               <Link to="projects" smooth duration={1000} offset={-70}
                 style={{ border: `1.5px solid ${btnAltBorder}`, color: accent, padding: '0.75rem 1.5rem', borderRadius: '50px', fontWeight: 600, cursor: 'pointer', fontSize: '0.84rem', background: btnAlt, whiteSpace: 'nowrap' }}>
@@ -230,18 +206,22 @@ function Hero() {
 
               {/* System Status */}
               <motion.div
-                className="status-widget"
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                style={{ position: 'absolute', bottom: '14px', left: '50%', transform: 'translateX(-50%)', background: statusBg, border: `1px solid ${statusBorder}`, borderRadius: '12px', padding: '0.65rem 1rem', minWidth: '185px', zIndex: 5, whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.45rem' }}>
-                  <span style={{ color: accent, fontSize: '0.82rem' }}>⚡</span>
+                style={{ position: 'absolute', bottom: '14px', left: '50%', transform: 'translateX(-50%)', background: statusBg, border: `1px solid ${statusBorder}`, borderRadius: '12px', padding: '0.6rem 1rem', width: 'calc(100% - 28px)', zIndex: 5 }}>
+                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.4rem' }}>
                   <span style={{ color: textMain, fontWeight: 700, fontSize: '0.74rem' }}>System Status</span>
                 </div>
-                <div style={{ background: progressBg, borderRadius: '4px', height: '4px', marginBottom: '0.45rem', overflow: 'hidden' }}>
-                  <motion.div animate={{ width: ['0%', '100%'] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }} style={{ height: '100%', background: accent, borderRadius: '4px' }} />
+                <div style={{ background: progressBg, borderRadius: '6px', height: '6px', marginBottom: '0.4rem', overflow: 'hidden' }}>
+                  <motion.div
+                    animate={{ width: ['0%', '83%'] }}
+                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 2 }}
+                    style={{ height: '100%', background: accent, borderRadius: '6px' }}
+                  />
                 </div>
-                <p style={{ color: accent, fontSize: '0.55rem', fontFamily: 'Fira Code', letterSpacing: '1.5px' }}>DEPLOYMENT SUCCESSFUL ✓</p>
+                <p style={{ color: accent, fontSize: '0.55rem', fontFamily: 'Fira Code', letterSpacing: '0.5px', wordBreak: 'break-word' }}>
+                  DEPLOYMENT SUCCESSFUL ✓
+                </p>
               </motion.div>
 
             </div>
